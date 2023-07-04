@@ -16,17 +16,26 @@
         </style>
     </head>
     <body class="antialiased">
-        <h1>Some Title</h1>
-        @if(10 < 5)
-            <p>True Condition</p>
-        @endif()
+       <h1>Hello</h1>
 
-       @if($name === 'Gui')
-        <p>{{ $name }}</p>
-       @elseif($name !== 'Gui') 
-        <p>The name is not Gui</p>
-       @else
-        <p>{{ $name }}</p>
-       @endif         
+       @for($i=0;$i<count($arr);$i++)
+            <p>{{ $arr[$i] }} - {{ $i }}</p>
+            @if($i == 1)
+                <p>{{ $arr[$i] * 5 }}</p>
+            @endif
+       @endfor
+
+       <p>Foreach ------------</p>         
+
+       @foreach($names as $name)
+        <p>{{ $name }} - {{ $loop->index }}</p>         
+       @endforeach 
+       
+       <p>PHP Directive ------------</p>  
+
+       @php
+        $name = "Ze";
+        echo $name;
+       @endphp         
     </body>
 </html>

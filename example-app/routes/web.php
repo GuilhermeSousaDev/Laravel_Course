@@ -3,15 +3,26 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    $name = "Gui";
 
-    return view('welcome', ['name' => $name]);
+    $arr = [10, 20, 30, 40, 50, 60];
+    $names = ['Pedro', 'Carlos', 'Guilherme'];
+
+    return view(
+        'welcome', 
+        [
+            'arr' => $arr,
+            'names' => $names,
+        ],
+    );
 });
 
-Route::get('/contact', function () {
-    return view('contacts');
+Route::get('/contact/{id}', function ($id) {
+    return view('contacts', ['id'=>$id]);
 });
 
 Route::get('/product', function () {
     return view('product');
 });
+
+Route::redirect('/about', '/contact');
+Route::view('/contact', 'contacts');
