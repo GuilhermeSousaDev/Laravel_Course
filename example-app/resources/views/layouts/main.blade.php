@@ -17,10 +17,36 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="navbar-collapse">
+                <ul class="navbar-nav">
+                    <a href="/" class="navbar-brand" id="navbar">
+                        <img src="/img/hdcevents_logo.svg" alt="HDC Events" />
+                    </a>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/events/create" class="nav-link">Create Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/" class="nav-link">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
     @yield('content')
     <footer>
         <p>HDC Event &copy; 2020</p>
     </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

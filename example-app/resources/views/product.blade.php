@@ -4,6 +4,10 @@
 
 @section('content')
 
-<h1>Product Screen</h1>
+<h1>Product Screen ID: {{ $id }}</h1>
+
+@if(isset($search)) 
+    {{ $search }}
+@endif
 
 @endsection
