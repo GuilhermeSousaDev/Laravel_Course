@@ -18,27 +18,32 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <div class="navbar-collapse">
-                <ul class="navbar-nav">
-                    <a href="/" class="navbar-brand" id="navbar">
-                        <img src="/img/hdcevents_logo.svg" alt="HDC Events" />
-                    </a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#" id="navbar">
+                <img src="/img/hdcevents_logo.svg" alt="HDC Events" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="/" class="nav-link">Events</a>
+                        <a class="nav-link" href="#">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/events/create" class="nav-link">Create Events</a>
+                        <a class="nav-link" href="/events/create">Create Events</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/" class="nav-link">Login</a>
+                        <a class="nav-link" href="#">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/" class="nav-link">Register</a>
+                        <a class="nav-link" href="#">Register</a>
                     </li>
                 </ul>
             </div>
         </nav>
+
+
     </header>
 
     @yield('content')

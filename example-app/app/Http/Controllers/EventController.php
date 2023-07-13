@@ -3,21 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class EventController extends Controller
 {
     public function index()
     {
-
-        $arr = [10, 20, 30, 40, 50, 60];
-        $names = ['Pedro', 'Carlos', 'Guilherme'];
+        $events = Event::all();
 
         return view(
             'welcome',
-            [
-                'arr' => $arr,
-                'names' => $names,
-            ],
+            ['events' => $events],
         );
     }
 
