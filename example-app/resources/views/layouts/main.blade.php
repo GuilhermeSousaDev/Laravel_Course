@@ -31,14 +31,36 @@
                         <a class="nav-link" href="#">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/events/create">Create Events</a>
+                        <a class="nav-link" href="/dashboard">Create Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <form action="/logout" method="POST">
+                            @csrf
+                            <a 
+                                href="/logout" 
+                                class="nav-link" 
+                                onclick="
+                                    event.preventDefault();
+                                    this.closest('form').submit()
+                                "
+                            >
+                                Log out
+                            </a>
+                        </form>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
-                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">My Events</a>
+                        </li>
+                    @endauth
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">Register</a>
+                        </li>
+                    @endguest
                 </ul>
             </div>
         </nav>
