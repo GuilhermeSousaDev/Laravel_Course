@@ -7,7 +7,7 @@ Route::get('/', [EventController::class, 'index']);
 
 Route::get('/event/{id}', [EventController::class, 'show']);
 
-Route::get('/events/create', [EventController::class, 'create']);
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
 
 Route::post('/events', [EventController::class, 'store']);
 
